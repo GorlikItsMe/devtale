@@ -20,14 +20,20 @@
 #include "MainForm.h"
 #include "Protocol.h"
 #include "PacketHandler.h"
+#include "DiscordRPC.h"
 
 #define UNUSED(x) (void*)(x)
 
+DiscordRPC g_Discord;
+
 void WINAPI DllThread()
 {
-	devtale::MainForm^ form = gcnew devtale::MainForm();
-	devtale::Protocol::get()->setPacketHandler(new devtale::PacketHandler(form));
-	System::Windows::Forms::Application::Run(form);
+	//devtale::Protocol::get()->setPacketHandler(new devtale::PacketHandler(/*form*/));
+	g_Discord.Initalize();
+	//g_Discord->Update();
+
+	devtale::Protocol::get()->setPacketHandler(new devtale::PacketHandler(g_Discord));
+
 }
 
 #pragma managed(push, off)

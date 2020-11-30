@@ -15,10 +15,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 #include "PacketHandler.h"
+#include "DiscordRPC.h"
 
 void devtale::PacketHandler::onPacketSend(std::string packet) const
 {
-	if (!form_->logSentPacketsCheckBox->Checked) return;
+	std::cout << "<Send> " << packet << std::endl;
+
+	/*if (!form_->logSentPacketsCheckBox->Checked) return;
 	String^ s = gcnew String(packet.c_str()) + "\r\n";
 	if (!form_->enableSentPacketFilterCheckBox->Checked)
 	{
@@ -43,10 +46,19 @@ void devtale::PacketHandler::onPacketSend(std::string packet) const
 	{
 		appendLog(s, false);
 	}
+	*/
 }
 
 void devtale::PacketHandler::onPacketReceive(std::string packet) const
 {
+	std::cout << "<recv> " << packet << std::endl;
+
+	//c_info Gorlik - -1 -1 - 3 0 1 0 2 1 27 0 0 0 0 0 0 0 0
+	//std::string needle = "c_info";
+	//if (packet.compare(0, needle.length(), needle) == 0)
+		//g_Discord_->UpdateNTPacket(packet);
+
+	/*
 	if (!form_->logReceivedPacketsCheckBox->Checked) return;
 	System::String^ s = gcnew String(packet.c_str()) + "\r\n";
 	if (!form_->enableReceivedPacketFilterCheckBox->Checked)
@@ -70,7 +82,7 @@ void devtale::PacketHandler::onPacketReceive(std::string packet) const
 	if (form_->receivedBlacklistRadio->Checked)
 	{
 		appendLog(s, true);
-	}
+	}*/
 }
 
 void devtale::PacketHandler::appendLog(System::String^ packet, bool is_received) const

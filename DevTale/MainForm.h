@@ -789,6 +789,7 @@ namespace devtale
 			this->label1->Size = System::Drawing::Size(483, 247);
 			this->label1->TabIndex = 0;
 			this->label1->Text = resources->GetString(L"label1.Text");
+			this->label1->Click += gcnew System::EventHandler(this, &MainForm::label1_Click);
 			// 
 			// sendTimer
 			// 
@@ -993,7 +994,9 @@ namespace devtale
 			}
 		}
 
-    };
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }
 
 #pragma warning(pop)

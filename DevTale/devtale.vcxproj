@@ -76,6 +76,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <TargetName>$(ProjectName)-$(Configuration)</TargetName>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>D:\HishiTale\devtale\DevTale\DiscordSDK\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -92,11 +94,17 @@
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <LanguageStandard>Default</LanguageStandard>
+      <ConformanceMode>false</ConformanceMode>
+      <SDLCheck>true</SDLCheck>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAsManaged>true</CompileAsManaged>
     </ClCompile>
     <Link>
-      <AdditionalDependencies />
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;discord_game_sdk.dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>D:\HishiTale\devtale\DevTale\DiscordSDK\lib\x86;%(AdditionalLibraryDirectories);D:\HishiTale\devtale\DevTale\DiscordSDK\lib\x86</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -117,8 +125,9 @@
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
-      <AdditionalDependencies />
+      <AdditionalDependencies>discord_game_sdk.dll.lib</AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>;D:\HishiTale\devtale\DevTale\DiscordSDK\lib\x86</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -139,27 +148,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DiscordRPC.cpp" />
+    <ClCompile Include="DiscordSDK\cpp\achievement_manager.cpp" />
+    <ClCompile Include="DiscordSDK\cpp\activity_manager.cpp" />
+    <ClCompile Include="DiscordSDK\cpp\application_manager.cpp" />
+    <ClCompile Include="DiscordSDK\cpp\core.cpp" />
+    <ClCompile Include="DiscordSDK\cpp\image_manager.cpp" />
+    <ClCompile Include="DiscordSDK\cpp\lobby_manager.cpp" />
+    <ClCompile Include="DiscordSDK\cpp\network_manager.cpp" />
+    <ClCompile Include="DiscordSDK\cpp\overlay_manager.cpp" />
+    <ClCompile Include="DiscordSDK\cpp\relationship_manager.cpp" />
+    <ClCompile Include="DiscordSDK\cpp\storage_manager.cpp" />
+    <ClCompile Include="DiscordSDK\cpp\store_manager.cpp" />
+    <ClCompile Include="DiscordSDK\cpp\types.cpp" />
+    <ClCompile Include="DiscordSDK\cpp\user_manager.cpp" />
+    <ClCompile Include="DiscordSDK\cpp\voice_manager.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MainForm.cpp" />
     <ClCompile Include="Memory.cpp" />
     <ClCompile Include="NosString.cpp" />
     <ClCompile Include="PacketHandler.cpp" />
     <ClCompile Include="Protocol.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MainForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
+    <ClInclude Include="DiscordRPC.h" />
+    <ClInclude Include="DiscordSDK\cpp\achievement_manager.h" />
+    <ClInclude Include="DiscordSDK\cpp\activity_manager.h" />
+    <ClInclude Include="DiscordSDK\cpp\application_manager.h" />
+    <ClInclude Include="DiscordSDK\cpp\core.h" />
+    <ClInclude Include="DiscordSDK\cpp\discord.h" />
+    <ClInclude Include="DiscordSDK\cpp\event.h" />
+    <ClInclude Include="DiscordSDK\cpp\ffi.h" />
+    <ClInclude Include="DiscordSDK\cpp\image_manager.h" />
+    <ClInclude Include="DiscordSDK\cpp\lobby_manager.h" />
+    <ClInclude Include="DiscordSDK\cpp\network_manager.h" />
+    <ClInclude Include="DiscordSDK\cpp\overlay_manager.h" />
+    <ClInclude Include="DiscordSDK\cpp\relationship_manager.h" />
+    <ClInclude Include="DiscordSDK\cpp\storage_manager.h" />
+    <ClInclude Include="DiscordSDK\cpp\store_manager.h" />
+    <ClInclude Include="DiscordSDK\cpp\types.h" />
+    <ClInclude Include="DiscordSDK\cpp\user_manager.h" />
+    <ClInclude Include="DiscordSDK\cpp\voice_manager.h" />
     <ClInclude Include="Memory.h" />
     <ClInclude Include="NosString.h" />
     <ClInclude Include="PacketHandler.h" />
     <ClInclude Include="Protocol.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.h</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
