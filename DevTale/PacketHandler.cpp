@@ -21,32 +21,6 @@ void devtale::PacketHandler::onPacketSend(std::string packet) const
 {
 	std::cout << "<Send> " << packet << std::endl;
 
-	/*if (!form_->logSentPacketsCheckBox->Checked) return;
-	String^ s = gcnew String(packet.c_str()) + "\r\n";
-	if (!form_->enableSentPacketFilterCheckBox->Checked)
-	{
-		appendLog(s, false);
-		return;
-	}
-	auto en = form_->filterSentPacketList->Items->GetEnumerator();
-	while (en->MoveNext())
-	{
-		String^ filter = (String^)en->Current;
-		if (s->Contains(filter))
-		{
-			if (form_->sentWhitelistRadio->Checked)
-			{
-				appendLog(s, false);
-			}
-			return;
-		}
-	}
-
-	if (form_->sentBlacklistRadio->Checked)
-	{
-		appendLog(s, false);
-	}
-	*/
 }
 
 void devtale::PacketHandler::onPacketReceive(std::string packet) const
@@ -58,31 +32,6 @@ void devtale::PacketHandler::onPacketReceive(std::string packet) const
 	//if (packet.compare(0, needle.length(), needle) == 0)
 		//g_Discord_->UpdateNTPacket(packet);
 
-	/*
-	if (!form_->logReceivedPacketsCheckBox->Checked) return;
-	System::String^ s = gcnew String(packet.c_str()) + "\r\n";
-	if (!form_->enableReceivedPacketFilterCheckBox->Checked)
-	{
-		appendLog(s, true);
-		return;
-	}
-	auto en = form_->filterReceivedPacketList->Items->GetEnumerator();
-	while (en->MoveNext())
-	{
-		String^ filter = (String^)en->Current;
-		if (s->Contains(filter))
-		{
-			if (form_->receivedWhitelistRadio->Checked)
-			{
-				appendLog(s, true);
-			}
-			return;
-		}
-	}
-	if (form_->receivedBlacklistRadio->Checked)
-	{
-		appendLog(s, true);
-	}*/
 }
 
 void devtale::PacketHandler::appendLog(System::String^ packet, bool is_received) const

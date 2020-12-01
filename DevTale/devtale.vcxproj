@@ -148,21 +148,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DiscordRPC.cpp" />
-    <ClCompile Include="DiscordSDK\cpp\achievement_manager.cpp" />
-    <ClCompile Include="DiscordSDK\cpp\activity_manager.cpp" />
-    <ClCompile Include="DiscordSDK\cpp\application_manager.cpp" />
-    <ClCompile Include="DiscordSDK\cpp\core.cpp" />
-    <ClCompile Include="DiscordSDK\cpp\image_manager.cpp" />
-    <ClCompile Include="DiscordSDK\cpp\lobby_manager.cpp" />
-    <ClCompile Include="DiscordSDK\cpp\network_manager.cpp" />
-    <ClCompile Include="DiscordSDK\cpp\overlay_manager.cpp" />
-    <ClCompile Include="DiscordSDK\cpp\relationship_manager.cpp" />
-    <ClCompile Include="DiscordSDK\cpp\storage_manager.cpp" />
-    <ClCompile Include="DiscordSDK\cpp\store_manager.cpp" />
-    <ClCompile Include="DiscordSDK\cpp\types.cpp" />
-    <ClCompile Include="DiscordSDK\cpp\user_manager.cpp" />
-    <ClCompile Include="DiscordSDK\cpp\voice_manager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Memory.cpp" />
     <ClCompile Include="NosString.cpp" />
@@ -170,24 +155,6 @@
     <ClCompile Include="Protocol.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DiscordRPC.h" />
-    <ClInclude Include="DiscordSDK\cpp\achievement_manager.h" />
-    <ClInclude Include="DiscordSDK\cpp\activity_manager.h" />
-    <ClInclude Include="DiscordSDK\cpp\application_manager.h" />
-    <ClInclude Include="DiscordSDK\cpp\core.h" />
-    <ClInclude Include="DiscordSDK\cpp\discord.h" />
-    <ClInclude Include="DiscordSDK\cpp\event.h" />
-    <ClInclude Include="DiscordSDK\cpp\ffi.h" />
-    <ClInclude Include="DiscordSDK\cpp\image_manager.h" />
-    <ClInclude Include="DiscordSDK\cpp\lobby_manager.h" />
-    <ClInclude Include="DiscordSDK\cpp\network_manager.h" />
-    <ClInclude Include="DiscordSDK\cpp\overlay_manager.h" />
-    <ClInclude Include="DiscordSDK\cpp\relationship_manager.h" />
-    <ClInclude Include="DiscordSDK\cpp\storage_manager.h" />
-    <ClInclude Include="DiscordSDK\cpp\store_manager.h" />
-    <ClInclude Include="DiscordSDK\cpp\types.h" />
-    <ClInclude Include="DiscordSDK\cpp\user_manager.h" />
-    <ClInclude Include="DiscordSDK\cpp\voice_manager.h" />
     <ClInclude Include="Memory.h" />
     <ClInclude Include="NosString.h" />
     <ClInclude Include="PacketHandler.h" />

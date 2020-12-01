@@ -19,20 +19,14 @@
 
 #include "vcclr.h"
 #include <string>
-#include "DiscordRPC.h"
 
 namespace devtale
 {
 	class PacketHandler
 	{
 	public:
-		/*PacketHandler(MainForm^ form)
+		PacketHandler()
 		{
-			form_ = form;
-		}*/
-		PacketHandler(DiscordRPC g_Discord)
-		{
-			g_Discord_ = g_Discord;
 		}
 
 		void onPacketSend(std::string packet) const;
@@ -40,7 +34,6 @@ namespace devtale
 
 	private:
 		gcroot<MainForm^> form_; // trezba do konca usunac
-		DiscordRPC g_Discord_;
 		void appendLog(String^ packet, bool is_received) const;
 	};
 }
